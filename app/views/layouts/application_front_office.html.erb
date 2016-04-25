@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>RailsProject</title>
+        <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <%= stylesheet_link_tag 'application_front_office', media: 'all' %>
+        <%= javascript_include_tag 'application_front_office' %>
+        <%= yield :js_head %>
+        <%= csrf_meta_tags %>
+    </head>
+
+    <body class="<%= controller.controller_name %>" lang-attr="<%= I18n.locale %>" >
+
+        <div id="page-loader" class="fade in"><span class="spinner"></span></div>
+
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header" id="min-size-content">
+
+            <header class="mdl-layout__header">
+                <%= render 'layouts/front_office/header' %>
+            </header>
+
+            <div class="mdl-layout__drawer">
+                <%= render 'layouts/front_office/sidebar' %>
+            </div>
+
+            <main class="mdl-layout__content layout__content-front-office">
+                <div class="page-content">
+                    <%= render 'layouts/shared/notice' %>
+                    <%= render 'layouts/shared/alert' %>
+
+                    <%= yield %>
+                </div>
+                <%= render 'layouts/front_office/footer' %>
+            </main>
+
+        </div>
+
+    </body>
+
+</html>

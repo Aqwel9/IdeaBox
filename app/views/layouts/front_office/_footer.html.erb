@@ -1,0 +1,43 @@
+<!-- STICKY FOOTER -->
+<style>
+    .mdl-layout__content {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-flow: column nowrap;
+        -ms-flex-flow: column nowrap;
+        flex-flow: column nowrap;
+    }
+
+    .mdl-layout__content > *:not(.mdl-layout-spacer) {
+        -webkit-flex: none;
+        -ms-flex: none;
+        flex: none;
+    }
+</style>
+
+<div class="mdl-layout-spacer"></div>
+
+<footer class="mdl-mini-footer">
+    <div class="mdl-mini-footer__left-section">
+        <div class="mdl-logo"><%= t 'site_title' %></div>
+        <ul class="mdl-mini-footer__link-list">
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Privacy & Terms</a></li>
+        </ul>
+    </div>
+    <div class="mdl-mini-footer__right-section">
+        <button class="mdl-mini-footer__social-btn">
+            <%= fa_icon 'globe', class: 'fa-2x', style: 'color:#fff' %>
+        </button>
+        <button class="mdl-mini-footer__social-btn">
+            <%= fa_icon 'github', class: 'fa-2x', style: 'color:#fff' %>
+        </button>
+        <button class="mdl-mini-footer__social-btn">
+            <%= fa_icon 'twitter', class: 'fa-2x', style: 'color:#fff' %>
+        </button>
+        <button class="mdl-mini-footer__social-btn">
+            <%= fa_icon 'facebook', class: 'fa-2x', style: 'color:#fff' %>
+        </button>
+    </div>
+</footer>

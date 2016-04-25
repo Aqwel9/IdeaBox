@@ -1,0 +1,80 @@
+<div class="row">
+    <div class="column-12" id="idea-content-nav">
+        <ul class="tabs">
+            <li class="tab col s3"><a href="#idea" class="active">Idea</a></li>
+            <li class="tab col s3"><a href="#idea-component">Idea Component</a></li>
+        </ul>
+    </div>
+</div>
+<%= form_for @idea, url: {action: action} do |f| %>
+<div class="row">
+    <div class="column-12" id="idea-content">
+        <div class="row">
+            <div id="idea">
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header active"><i class="material-icons">filter_drama</i>PART I</div>
+                        <div class="collapsible-body">
+                            <div class="column-12  text-left">
+                                <%= f.text_field :background, id: 'background', class: 'color-picker' %>
+                            </div>
+                            <div class='row'>
+                                <div class="input-field column-6">
+                                    <%= f.text_field :title, id: 'title' %>
+                                    <%= f.label :title, for: 'title' %>
+                                </div>
+                                <div class="panel-body panel-form column-12">
+                                    <%= f.text_area :description, {"data-textarea" => "1", class: "form-control textarea", value: @idea.description} %>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="idea-component">
+                <ul class="collapsible popout" data-collapsible="accordion">
+                    <%= f.nested_fields_for :idea_components, wrapper_tag: :li do |idea_component| %>
+
+                    <%= idea_component.remove_nested_fields_link '', class: '', data: { confirm: 'Are you sure?' } do %>
+                    <i class="material-icons">cancel</i>
+                    <% end %>
+                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>IDEA COMPONENT</div>
+                    <div class="collapsible-body">
+                        <div class="column-12  text-left">
+                            <%= idea_component.text_field :background, id: 'background', class: 'color-picker' %>
+                        </div>
+                        <div class='row'>
+                            <div class="input-field column-6">
+                                <%= idea_component.text_field :title, id: 'title' %>
+                                <%= idea_component.label :title, for: 'title' %>
+                            </div>
+
+                            <div class="panel-body panel-form column-12">
+                                <%= idea_component.text_area :description, {"data-textarea" => "1", class: "form-control textarea"} %>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <% end %>
+                </ul>
+
+                <%= f.add_nested_fields_link :idea_components do %>
+                <div class="btn">
+                    <i class="material-icons">add</i>
+                </div>
+                <% end %>
+            </div>
+            <div class="column-12">
+                <%= f.submit 'submit idea', class: 'btn pull-right' %>
+                <span class="pull-right" style="padding: 6px 2rem;">
+                    <%= f.check_box :visibility, class:'filled-in', id: "filled-in-box" %>
+                    <label for="filled-in-box">Visibility</label>
+                </span>
+            </div>
+
+        </div>
+    </div>
+</div>
+<% end %>

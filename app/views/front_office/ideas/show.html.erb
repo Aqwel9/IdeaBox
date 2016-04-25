@@ -1,0 +1,14 @@
+<div class="grid-container" id="one-page">
+    <div class="row show-idea-panel" style="background-color: <%= @idea.background %>">
+        <div>
+            <p class="text-center white-text"><%= @idea.title %></p>
+            <div class="card-panel show-idea-panel-card">
+                <%= raw @idea.description %>
+            </div>
+        </div>
+    </div>
+
+    <% @idea.idea_components.each do |idea_component| %>
+        <%= render 'front_office/ideas/templates/template1', idea_component: idea_component %>
+    <% end %>
+</div>

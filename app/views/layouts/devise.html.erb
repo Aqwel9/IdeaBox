@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RailsProject</title>
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <%= stylesheet_link_tag 'application_front_office', media: 'all', 'data-turbolinks-track' => true %>
+        <%= stylesheet_link_tag 'users', media: 'all', 'data-turbolinks-track' => true %>
+        <%= javascript_include_tag 'application_front_office', 'data-turbolinks-track' => true %>
+        <%= yield :js_head %>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+
+
+
+        <div class="mdl-layout mdl-js-layout background-image-devise">
+
+
+            <main class="mdl-layout__content">
+                <div class="mdl-color-text--white">
+                    <h2 class="mdl-card__title-text bold">
+                        <%= t 'site_title' %>
+                    </h2>
+                    <%= render "users/shared/sub_titles.html.erb" %>
+                </div>
+                <br>
+                <div class="mdl-card mdl-shadow--6dp card-devise">
+                    <%= yield %>
+                </div>
+            </main>
+            <%= render "users/shared/links" %>
+        </div>
+
+        <%= render "layouts/shared/notice" %>
+        <%= render "layouts/shared/alert" %>
+
+
+    </body>
+    </html>

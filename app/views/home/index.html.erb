@@ -1,0 +1,38 @@
+<div class="grid-container">
+
+    <div class="row">
+        <% Idea.visible.each do |idea| %>
+        <div class="column-0"></div>
+        <div class="column-0-3">
+            <div class="card idea-card column-12">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <%= image_tag("background-7.jpg", width: '100%', class: "activator") %>
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4"><%= idea.title %> <i class="material-icons right">more_vert</i></span>
+                    <p><%= idea.created_at.strftime("%d/%m/%Y")  %></p>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">
+                        <%= idea.title %>
+                        <i class="material-icons right">close</i>
+                        <% if idea.user_id == current_user.id %>
+                            <%= link_to edit_fo_idea_path(idea.id), class: '' do %>
+                                <i class="material-icons">mode_edit</i></a>
+                            <% end %>
+                        <% end %>
+                    </span>
+                    <p><%= idea.user.email %></p>
+                    <br>
+                    <p><%= raw idea.description %></p>
+                    <p>number of components : <%= idea.idea_components.count %></p>
+                    <%= link_to fo_idea_path(idea.id), class: 'btn idea-show-card' do %>
+                    <%= t 'see_idea' %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    </div>
+
+</div>

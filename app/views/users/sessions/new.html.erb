@@ -1,0 +1,24 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="mdl-card__supporting-text">
+        <div class="input-field col s12">
+            <i class="material-icons prefix">email</i>
+            <%= f.email_field :email, autofocus: true, class: 'validate', id: 'email' %>
+            <%= f.label :email, for: 'email' %>
+        </div>
+        <br>
+        <div class="input-field col s12">
+            <i class="material-icons prefix">vpn_key</i>
+            <%= f.label :password, id: 'password' %>
+            <%= f.password_field :password, autocomplete: "off", for: 'password' %>
+        </div>
+        <br>
+
+        <!-- <% if devise_mapping.rememberable? %>
+            <%= f.check_box :remember_me, class: "filled-in", id: "filled-in-box", checked: "checked" %>
+            <%= f.label :remember_me, for: "filled-in-box" %>
+        <% end %> -->
+
+        <%= f.submit t('login'), class: 'btn pull-right' %>
+
+    </div>
+<% end %>

@@ -1,0 +1,40 @@
+<span class="mdl-layout-title text-center">
+    <button id="menu1" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">arrow_drop_down</i>
+    </button>
+
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu" for="menu1">
+        <%= link_to(t('logout'), destroy_user_session_path, :method => :delete) %>
+    </ul>
+
+    <div class="site-title"><%= t 'site_title' %></div>
+    <div class="title-user-email"><%= current_user.email %></div>
+    <!-- Right aligned menu below button -->
+</span>
+<hr class="hr-menu">
+<nav class="mdl-navigation">
+    <%= link_to root_path, class: 'mdl-navigation__link' do %>
+        <i class="material-icons">home</i>
+        HOME
+    <% end %>
+    <%= link_to fo_ideas_path, class: 'mdl-navigation__link' do %>
+        <i class="material-icons">lightbulb_outline</i>
+        MY IDEAS
+    <% end %>
+    <a class="mdl-navigation__link" href="#">
+        <i class="material-icons">photo_camera</i>
+        Categorie 3
+    </a>
+    <a class="mdl-navigation__link" href="#">
+        <i class="material-icons">flight</i>
+        Categorie 4
+    </a>
+    <a class="mdl-navigation__link" href="#">
+        <i class="material-icons">event</i>
+        Categorie 5
+    </a>
+    <a class="mdl-navigation__link" href="#">
+        <i class="material-icons">brush</i>
+        Categorie 6
+    </a>
+</nav>

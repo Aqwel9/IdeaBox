@@ -1,0 +1,31 @@
+<div class="grid-container">
+
+    <div class="row">
+        <ul class="column-12">
+            <% @ideas.each do |idea| %>
+
+                <li class="mdl-list__item mdl-list__item--three-line card">
+
+                    <span class="mdl-list__item-primary-content">
+                        <%= link_to fo_idea_path(idea.id) do %>
+                        <i class="material-icons mdl-list__item-avatar">person</i>
+                        <span><%= idea.title %></span>
+
+                        <span class="mdl-list__item-text-body">
+                            <%= idea.created_at.strftime("%d/%m/%Y") %><br><%= raw idea.description %>
+                        </span>
+                        <% end %>
+                    </span>
+                    <span class="mdl-list__item-secondary-content">
+                        <%= link_to edit_fo_idea_path(idea.id), class: 'mdl-list__item-secondary-action' do %>
+                            <i class="material-icons">mode_edit</i></a>
+                        <% end %>
+                    </span>
+
+                </li>
+
+            <% end %>
+        </ul>
+    </div>
+
+</div>

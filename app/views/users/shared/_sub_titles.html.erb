@@ -1,0 +1,2 @@
+<%= 'Forgot your password' if !(devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations') %>
+<%= 'Log In' if !(controller_name != 'sessions') %>

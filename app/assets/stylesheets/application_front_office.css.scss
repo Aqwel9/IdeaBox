@@ -1,0 +1,273 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any styles
+* defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+* file per style scope.
+*
+*= require jquery-ui
+*= require bootstrap-wysihtml5
+*= require_self
+*= require mdl/material
+*= require axel/styles
+*= require axel/800
+*= require axel/650
+*= require onepage/onepage-scroll
+*= require jquery.minicolors
+*/
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "materialize";
+@import "font-awesome";
+
+a {
+    text-decoration: none !important;
+}
+
+/* Gradient transparent - color - transparent */
+
+hr.hr-menu {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.bold {
+    font-weight: bold !important;
+}
+
+.mdl-layout__drawer > .mdl-layout__title, .mdl-layout__drawer > .mdl-layout-title {
+    padding-left: 0 !important;
+}
+
+/* Change the layout__content class to Flex (instead of inline-block) to allow spacer to work. */
+.mdl-layout__content {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+.mdl-layout__drawer {
+    border:none !important;
+    background-color: #fff !important;
+}
+
+.mdl-navigation__link i {
+    margin-right: 13px
+}
+
+.mdl-navigation__link {
+    color: #444 !important;
+    padding: 10px 23px !important;
+}
+
+.mdl-navigation__link:hover {
+    background-color: rgba(0,0,0,0.05) !important;
+    opacity: 1;
+}
+
+.mdl-layout__header {
+    background-color: rgb(66,66,66) !important;
+}
+
+.mdl-layout-title {
+    line-height: 10px !important;
+}
+
+/////////////////
+
+.site-title {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.title-user-email {
+    font-size: 10px;
+}
+
+#menu1 {
+    position: absolute;
+    right:0;
+}
+
+p.notice, p.alert {
+    padding: 20px;
+    padding-left: 40px;
+}
+
+p.notice{
+    background-color: #CCEACD;
+    color: #3E9E40;
+}
+
+p.alert {
+    background-color: #daa1a1;
+    color: #943535;
+}
+
+.icon-close-notice {
+    vertical-align: middle;
+    position: absolute;
+    right: 20px;
+}
+
+.icon-close-notice:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.devise-links a {
+    color: #fff;
+    opacity: 0.7;
+}
+
+.mdl-card {
+    width: inherit !important;
+    min-height: inherit !important;
+}
+
+.mdl-card__supporting-text {
+    width: 100% !important;
+}
+
+.input-field {
+    width: 300px;
+    max-width: 100%;
+}
+
+.input-field .prefix {
+    margin-top: 10px;
+}
+
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+    display: inline-block !important;
+    font-size: 24px !important;
+    height: inherit !important;
+    line-height: inherit !important;
+}
+
+nav {
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+
+header .mdl-textfield {
+    padding: 12px 0;
+}
+
+.mdl-textfield input[type=text] {
+    height: 2rem !important;
+}
+
+.idea-card {
+    padding: 0 !important;
+}
+
+.mdl-layout__header-row {
+    padding: 0 15px 0 80px !important;
+}
+
+.mdl-layout__header-row .btn-flat{
+    background-color: #525252 !important;
+}
+
+.zone-text-card {
+    background: rgba(#ffffff, 0.43);
+    float: right;
+    width: 50%;
+    height: 100%;
+    box-shadow: 0px 0px 0px #000;
+}
+
+#idea-content .card-panel {
+    margin:0;
+}
+
+ul.collapsible {
+    margin-top: 0;
+    box-shadow: none;
+    border-top:none;
+    margin-bottom: 0;
+}
+
+#idea-content .remove_nested_fields_link {
+    float: right;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+#idea-content .add_nested_fields_link {
+    float: left;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+#idea-content .collapsible-body {
+    background-color: rgb(255, 255, 255);
+}
+
+.idea-show-card {
+    position:absolute;
+    bottom:0;
+    right: 0;
+}
+
+.layout__content-front-office {
+    background-color: #F9F5F5;
+}
+
+.show-idea-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:calc(100vh - 64px);
+    border-top: solid 1px #000;
+}
+
+.show-idea-panel-card {
+    opacity: 0.7;
+}
+
+header {
+    min-height: 64px !important;
+}
+
+.mdl-layout__header-row {
+    min-height: 64px !important;
+}
+
+.mdl-layout__drawer-button {
+    margin: 10px 12px !important;
+}
+
+#one-page {
+    height: calc(100vh - 64px);
+}
+
+#idea-content-nav {
+    padding: 0;
+}
+
+li.nested_idea_idea_components {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.collapsible-header {
+}
+
+.btn {
+    box-shadow: none;
+    background-color: #75d135;
+}
+
+.btn:hover {
+    box-shadow: none;
+    background-color: rgba(#75d135, 0.82);
+}
