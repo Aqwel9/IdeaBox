@@ -70,8 +70,8 @@ $(document).ready(function(){
         });
 
     }
-    $('input[type=text].color-picker').minicolors();
 
+    $('input[type=text].minicolors').minicolors();
 
     if($('#one-page').length > 0){
         $("#one-page").onepage_scroll({

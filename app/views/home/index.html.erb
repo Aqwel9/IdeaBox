@@ -20,6 +20,14 @@
                             <%= link_to edit_fo_idea_path(idea.id), class: '' do %>
                                 <i class="material-icons">mode_edit</i></a>
                             <% end %>
+                        <% else %>
+                            <%= link_to user_toggle_follow_path(user_id: current_user, idea_id: idea.id), :method => :post  do %>
+                                <% if current_user.follows?(idea) %>
+                                    <%= fa_icon "star", class: 'fa-1x' %>
+                                <% else %>
+                                    <%= fa_icon "star-o", class: 'fa-1x' %>
+                                <% end %>
+                            <% end %>
                         <% end %>
                     </span>
                     <p><%= idea.user.email %></p>

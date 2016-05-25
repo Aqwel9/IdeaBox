@@ -6,29 +6,32 @@
         </ul>
     </div>
 </div>
-<%= form_for @idea, url: {action: action} do |f| %>
+<%= simple_form_for @idea, url: {action: action} do |f| %>
 <div class="row">
     <div class="column-12" id="idea-content">
         <div class="row">
             <div id="idea">
                 <ul class="collapsible" data-collapsible="accordion">
                     <li>
-                        <div class="collapsible-header active"><i class="material-icons">filter_drama</i>PART I</div>
+                        <div class="collapsible-header active"><i class="material-icons">filter_drama</i>IDEA
+                            <span class="pull-right">
+                                <%= f.input :background, id: 'background', :input_html => {class: 'minicolors'} %>
+                            </span>
+                        </div>
                         <div class="collapsible-body">
-                            <div class="column-12  text-left">
-                                <%= f.text_field :background, id: 'background', class: 'color-picker' %>
-                            </div>
                             <div class='row'>
-                                <div class="input-field column-6">
+                                <div class="input-field">
                                     <%= f.text_field :title, id: 'title' %>
                                     <%= f.label :title, for: 'title' %>
                                 </div>
+
                                 <div class="panel-body panel-form column-12">
                                     <%= f.text_area :description, {"data-textarea" => "1", class: "form-control textarea", value: @idea.description} %>
                                 </div>
-                            </div>
 
+                            </div>
                         </div>
+
                     </li>
                 </ul>
             </div>
@@ -56,7 +59,7 @@
                         </div>
 
                     </div>
-                    
+
                     <% end %>
                 </ul>
 

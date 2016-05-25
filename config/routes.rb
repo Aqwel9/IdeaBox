@@ -11,4 +11,10 @@ Rails.application.routes.draw do
         resources :ideas
     end
 
+    resources :users do
+        post 'follow',   to: 'socializations#follow'
+        post 'unfollow', to: 'socializations#unfollow'
+        post 'toggle_follow', to: 'socializations#toggle_follow'
+    end
+
 end

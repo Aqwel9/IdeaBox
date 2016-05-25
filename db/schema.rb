@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160401170321) do
+ActiveRecord::Schema.define(version: 20160524143434) do
+
+  create_table "follows", force: :cascade do |t|
+    t.string   "follower_type",   limit: 255
+    t.integer  "follower_id",     limit: 4
+    t.string   "followable_type", limit: 255
+    t.integer  "followable_id",   limit: 4
+    t.datetime "created_at"
+  end
+
+  add_index "follows", ["followable_id", "followable_type"], name: "fk_followables", using: :btree
+  add_index "follows", ["follower_id", "follower_type"], name: "fk_follows", using: :btree
 
   create_table "idea_components", force: :cascade do |t|
     t.string   "title",       limit: 255
@@ -35,6 +46,28 @@ ActiveRecord::Schema.define(version: 20160401170321) do
     t.integer  "user_id",     limit: 4
     t.string   "background",  limit: 255
   end
+
+  create_table "likes", force: :cascade do |t|
+    t.string   "liker_type",    limit: 255
+    t.integer  "liker_id",      limit: 4
+    t.string   "likeable_type", limit: 255
+    t.integer  "likeable_id",   limit: 4
+    t.datetime "created_at"
+  end
+
+  add_index "likes", ["likeable_id", "likeable_type"], name: "fk_likeables", using: :btree
+  add_index "likes", ["liker_id", "liker_type"], name: "fk_likes", using: :btree
+
+  create_table "mentions", force: :cascade do |t|
+    t.string   "mentioner_type",   limit: 255
+    t.integer  "mentioner_id",     limit: 4
+    t.string   "mentionable_type", limit: 255
+    t.integer  "mentionable_id",   limit: 4
+    t.datetime "created_at"
+  end
+
+  add_index "mentions", ["mentionable_id", "mentionable_type"], name: "fk_mentionables", using: :btree
+  add_index "mentions", ["mentioner_id", "mentioner_type"], name: "fk_mentions", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false

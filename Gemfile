@@ -12,7 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -64,6 +64,11 @@ gem 'jquery-minicolors-rails'
 #letter opener
 gem "letter_opener", :group => :development
 gem 'letter_opener_web', '~> 1.2.0', :group => :development
+
+gem 'simple_form'
+
+# social (follow / like)
+gem "socialization"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
