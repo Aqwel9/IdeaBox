@@ -43,7 +43,7 @@
                     <p><%= idea.user.email %></p>
                     <br>
                     <p><%= raw idea.description %></p>
-                    <p>number of components : <%= idea.idea_components.count %></p>
+                    <p>nombres de slides : <%= idea.idea_components.count %></p>
                     <%= link_to fo_idea_path(idea.id), class: 'btn idea-show-card' do %>
                     <%= t 'see_idea' %>
                     <% end %>
