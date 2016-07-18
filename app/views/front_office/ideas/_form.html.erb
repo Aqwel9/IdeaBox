@@ -13,14 +13,16 @@
             <div id="idea">
                 <ul class="collapsible" data-collapsible="accordion">
                     <li>
-                        <div class="collapsible-header active"><i class="material-icons">filter_drama</i>IDEA
-                            <span class="pull-right">
-                                <%= f.input :background, id: 'background', :input_html => {class: 'minicolors'} %>
-                            </span>
-                        </div>
+                        <div class="collapsible-header active"><i class="material-icons">filter_drama</i>IDEA</div>
                         <div class="collapsible-body">
                             <div class='row'>
-                                <div class="input-field">
+
+                                <div class="input-field col-md-6">
+                                    <%= f.text_field :background, id: 'background' %>
+                                    <%= f.label :background, for: 'background' %>
+                                </div>
+
+                                <div class="input-field col-md-6">
                                     <%= f.text_field :title, id: 'title' %>
                                     <%= f.label :title, for: 'title' %>
                                 </div>
@@ -44,16 +46,18 @@
                     <% end %>
                     <div class="collapsible-header"><i class="material-icons">filter_drama</i>IDEA COMPONENT</div>
                     <div class="collapsible-body">
-                        <div class="column-12  text-left">
-                            <%= idea_component.text_field :background, id: 'background', class: 'color-picker' %>
-                        </div>
                         <div class='row'>
-                            <div class="input-field column-6">
+                            <div class="input-field col-md-6">
+                                <%= idea_component.label :background, for: 'background' %>
+                                <%= idea_component.text_field :background, id: 'background' %>
+                            </div>
+
+                            <div class="input-field col-md-6">
                                 <%= idea_component.text_field :title, id: 'title' %>
                                 <%= idea_component.label :title, for: 'title' %>
                             </div>
 
-                            <div class="panel-body panel-form column-12">
+                            <div class="panel-body panel-form col-md-12">
                                 <%= idea_component.text_area :description, {"data-textarea" => "1", class: "form-control textarea"} %>
                             </div>
                         </div>

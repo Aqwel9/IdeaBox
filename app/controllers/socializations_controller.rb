@@ -1,6 +1,9 @@
 class SocializationsController < ApplicationController
     before_filter :load_socializable
 
+
+    #FOLLOW
+
     def follow
         current_user.follow!(@socializable)
         #render json: { follow: true }
@@ -15,6 +18,26 @@ class SocializationsController < ApplicationController
 
     def toggle_follow
         current_user.toggle_follow!(@socializable)
+        #render json: { follow: current_user.follows?(@socializable) }
+        redirect_to session.delete(:return_to)
+    end
+
+    #LIKE
+
+    def like
+        current_user.like!(@socializable)
+        #render json: { follow: true }
+        redirect_to session.delete(:return_to)
+    end
+
+    def unlike
+        current_user.unlike!(@socializable)
+        #render json: { follow: false }
+        redirect_to session.delete(:return_to)
+    end
+
+    def toggle_like
+        current_user.toggle_like!(@socializable)
         #render json: { follow: current_user.follows?(@socializable) }
         redirect_to session.delete(:return_to)
     end

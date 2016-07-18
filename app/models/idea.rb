@@ -6,6 +6,7 @@ class Idea < ActiveRecord::Base
     allow_destroy: true
 
     acts_as_followable
+    acts_as_likeable
     validates :title, presence: true
     validates :description, presence: true
     validates :user_id, presence: true

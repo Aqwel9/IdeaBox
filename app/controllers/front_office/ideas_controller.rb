@@ -37,6 +37,11 @@ module FrontOffice
             end
         end
 
+        def followed
+            @ideas = current_user.followees(Idea)
+            render 'followed'
+        end
+
         private
 
         def set_user

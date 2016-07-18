@@ -1,7 +1,7 @@
 <div class="grid-container">
 
     <div class="row">
-        <% Idea.visible.each do |idea| %>
+        <% @ideas.each do |idea| %>
         <div class="column-0"></div>
         <div class="column-0-3">
             <div class="card idea-card column-12">
@@ -43,10 +43,9 @@
                     <p><%= idea.user.email %></p>
                     <br>
                     <p><%= raw idea.description %></p>
-                    <p>nombres de slides : <%= idea.idea_components.count %></p>
-                    
+                    <p>number of components : <%= idea.idea_components.count %></p>
                     <%= link_to fo_idea_path(idea.id), class: 'btn idea-show-card' do %>
-                        <%= t 'see_idea' %>
+                    <%= t 'see_idea' %>
                     <% end %>
                 </div>
             </div>

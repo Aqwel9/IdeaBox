@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160524143434) do
+ActiveRecord::Schema.define(version: 20160527172647) do
 
   create_table "follows", force: :cascade do |t|
     t.string   "follower_type",   limit: 255
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20160524143434) do
     t.string   "likeable_type", limit: 255
     t.integer  "likeable_id",   limit: 4
     t.datetime "created_at"
+    t.integer  "likers_count",  limit: 4,   default: 0
   end
 
   add_index "likes", ["likeable_id", "likeable_type"], name: "fk_likeables", using: :btree

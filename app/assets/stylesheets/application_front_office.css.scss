@@ -137,13 +137,9 @@ p.alert {
     width: 100% !important;
 }
 
-.input-field {
+.mdl-card__supporting-text .input-field {
     width: 300px;
     max-width: 100%;
-}
-
-.input-field .prefix {
-    margin-top: 10px;
 }
 
 nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
@@ -209,8 +205,8 @@ header .mdl-textfield {
 
 .idea-show-card {
     position:absolute;
-    bottom:0;
-    right: 0;
+    bottom: 20px;
+    right: calc(50% - 60px);
 }
 
 .layout__content-front-office {
@@ -291,6 +287,7 @@ input[type=text] {
 
 .collapsible-body {
     width: 100%;
+    padding-top: 20px;
 }
 
 .idea_background label {

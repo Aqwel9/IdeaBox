@@ -21,20 +21,8 @@
         <i class="material-icons">lightbulb_outline</i>
         MY IDEAS
     <% end %>
-    <a class="mdl-navigation__link" href="#">
-        <i class="material-icons">photo_camera</i>
-        Categorie 3
-    </a>
-    <a class="mdl-navigation__link" href="#">
-        <i class="material-icons">flight</i>
-        Categorie 4
-    </a>
-    <a class="mdl-navigation__link" href="#">
-        <i class="material-icons">event</i>
-        Categorie 5
-    </a>
-    <a class="mdl-navigation__link" href="#">
-        <i class="material-icons">brush</i>
-        Categorie 6
-    </a>
+    <%= link_to followed_fo_ideas_path, class: 'mdl-navigation__link' do %>
+        <i class="material-icons">stars</i>
+        MY FAVORITES
+    <% end %>
 </nav>

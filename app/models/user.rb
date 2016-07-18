@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
     has_many :ideas
 
     acts_as_follower
+    acts_as_liker
 end
